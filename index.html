@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Angular-Require</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link href="themes/default/css/index.css" rel="stylesheet" type="text/css" />
+
+	<script src="libs/requirejs/require.js"></script>
+	<script src="main.js"></script>
+</head>
+
+<body ng-controller="indexCtrl" ng-render-finish="fn.onRenderFinish()">
+	<div>
+		<ul>
+			<li ng-repeat="nav in navigation.data" ng-click="navigation.onClick(nav)" ng-class="{'nav-active': nav.id == navigation.current}">
+				<span ng-bind="nav.title"></span>
+			</li>
+		</ul>
+	</div>
+	<div ui-view></div>
+</body>
+
+</html>
